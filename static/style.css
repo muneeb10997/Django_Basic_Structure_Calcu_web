@@ -1,0 +1,89 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the calculator container */
+.calculator {
+  width: 320px;
+  margin: 100px auto;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Display input field */
+.display {
+  margin-bottom: 20px;
+}
+
+#resultDisplay {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Styling for the buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Styling individual buttons */
+.button {
+  font-size: 20px;
+  padding: 20px;
+  background-color: #e1e1e1;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Buttons on hover */
+.button:hover {
+  background-color: #8b8383;
+}
+
+/* Styling for operator buttons */
+.operator {
+  background-color: #000000;
+  color: white;
+}
+
+.operator:hover {
+  background-color: #645c5c;
+}
+
+/* Clear and Equals button styling */
+button:active {
+  background-color: #b3b3b3;
+}
+
+#h1{
+  text-align: center;
+  margin: 70px auto;
+}
+
+.operatorc{
+  background-color: #8a0000;
+  color: white;
+}
+
+.operatorc:hover {
+  background-color: #bd4040;
+}
+
+#resultDisplay{
+  border-color: #000000;
+  color: #000000;
+}
