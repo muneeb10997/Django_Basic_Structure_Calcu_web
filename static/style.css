@@ -1,89 +1,72 @@
-/* Basic reset */
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Styling the calculator container */
-.calculator {
-  width: 320px;
-  margin: 100px auto;
-  border: 2px solid #333;
-  border-radius: 10px;
-  padding: 20px;
   background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Display input field */
-.display {
-  margin-bottom: 20px;
+header {
+  background: #9c9897;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 0px;
+  font-size: 1.5em;
 }
 
-#resultDisplay {
+.job-listing {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px auto;
+  flex-grow: 1;
+}
+
+.job-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: center;
+}
+
+.apply-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.form-container input {
   width: 100%;
-  height: 40px;
-  font-size: 24px;
-  text-align: right;
-  padding: 5px;
+  padding: 8px;
+  margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
 }
 
-/* Styling for the buttons grid */
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-/* Styling individual buttons */
-.button {
-  font-size: 20px;
-  padding: 20px;
-  background-color: #e1e1e1;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-/* Buttons on hover */
-.button:hover {
-  background-color: #8b8383;
-}
-
-/* Styling for operator buttons */
-.operator {
-  background-color: #000000;
+footer {
+  background: #000000;
   color: white;
-}
-
-.operator:hover {
-  background-color: #645c5c;
-}
-
-/* Clear and Equals button styling */
-button:active {
-  background-color: #b3b3b3;
-}
-
-#h1{
   text-align: center;
-  margin: 70px auto;
-}
-
-.operatorc{
-  background-color: #8a0000;
-  color: white;
-}
-
-.operatorc:hover {
-  background-color: #bd4040;
-}
-
-#resultDisplay{
-  border-color: #000000;
-  color: #000000;
+  padding: 10px;
+  margin-top: auto;
 }

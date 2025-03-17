@@ -5,38 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style.css' %}">
-  <title>Calculator</title>
+  <title>HR Application System</title>
 </head>
 <body>
-  <h1 id="h1">Calculator</h1>
-  <div class="calculator">
-    <div class="display">
-      <input id="resultDisplay" type="text" disabled placeholder="0">
+  <header>
+    <h1>Welcome to Our HR System</h1>
+    <p>Find your dream job and apply easily</p>
+</header>
+
+<div class="job-listing">
+    <div class="job-card">
+        <h2>Software Engineer</h2>
+        <p>Location: New York, USA</p>
+        <p>Experience: 2+ years</p>
+        <button class="apply-btn" onclick="openForm('Software Engineer')">Apply</button>
     </div>
-    <div class="buttons">
-      <button class="button" onclick="appendToDisplay('7')">7</button>
-      <button class="button" onclick="appendToDisplay('8')">8</button>
-      <button class="button" onclick="appendToDisplay('9')">9</button>
-      <button class="button operator" onclick="appendToDisplay('/')">/</button>
-
-      <button class="button" onclick="appendToDisplay('4')">4</button>
-      <button class="button" onclick="appendToDisplay('5')">5</button>
-      <button class="button" onclick="appendToDisplay('6')">6</button>
-      <button class="button operator" onclick="appendToDisplay('*')">*</button>
-
-      <button class="button" onclick="appendToDisplay('1')">1</button>
-      <button class="button" onclick="appendToDisplay('2')">2</button>
-      <button class="button" onclick="appendToDisplay('3')">3</button>
-      <button class="button operator" onclick="appendToDisplay('-')">-</button>
-
-      <button class="button" onclick="appendToDisplay('0')">0</button>
-      <button class="button operatorc" onclick="clearDisplay()">C</button>
-      <button class="button operator" onclick="appendToDisplay('+')">+</button>
-      <button class="button operator" onclick="calculate()">=</button>
+    <div class="job-card">
+        <h2>Data Analyst</h2>
+        <p>Location: San Francisco, USA</p>
+        <p>Experience: 1+ years</p>
+        <button class="apply-btn" onclick="openForm('Data Analyst')">Apply</button>
     </div>
+</div>
+
+<div id="application-form" class="form-popup">
+  <div class="form-container">
+      <h2>Apply for <span id="job-title"></span></h2>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label for="name">Full Name</label>
+          <input type="text" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" name="email" required>
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" required>
+          <label for="cv">Upload CV</label>
+          <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+          <button type="submit">Submit</button>
+      </form>
+      <button onclick="closeForm()">Close</button>
   </div>
+</div>
 
+
+<footer>
+    <p>&copy; 2025 HR System. All rights reserved.</p>
+</footer>
   <script src="{% static 'index.js' %}"></script>
 </body>
 </html>
-
