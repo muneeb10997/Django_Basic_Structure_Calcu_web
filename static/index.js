@@ -1,24 +1,24 @@
-// Function to append digits or operators to the display
-function appendToDisplay(value) {
-  let display = document.querySelector("#resultDisplay");
-  if (display.value === '0' && value !== '.' && value !== '=') {
-    display.value = value; // If it's the first digit, replace 0
-  } else {
-    display.value += value; // Otherwise, just append
-  }
+// Function to open the application form
+function openForm(jobTitle) {
+  document.getElementById("job-title").innerText = jobTitle;
+  document.getElementById("application-form").style.display = "block";
 }
 
-// Function to clear the display
-function clearDisplay() {
-  document.querySelector("#resultDisplay").value = '0';
+// Function to close the application form
+function closeForm() {
+  document.getElementById("application-form").style.display = "none";
 }
 
-// Function to perform the calculation when '=' is pressed
-function calculate() {
-  let display = document.querySelector("#resultDisplay");
-  try {
-    display.value = eval(display.value); // Using eval to evaluate the expression
-  } catch (e) {
-    display.value = 'Error'; // In case of an error (e.g., invalid syntax)
-  }
-}
+// Function to handle form submission
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to open the application form
+  window.openForm = function (jobTitle) {
+      document.getElementById("job-title").innerText = jobTitle;
+      document.getElementById("application-form").style.display = "block";
+  };
+
+  // Function to close the form
+  window.closeForm = function () {
+      document.getElementById("application-form").style.display = "none";
+  };
+});

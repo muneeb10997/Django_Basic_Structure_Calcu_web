@@ -32,7 +32,6 @@
   <div class="form-container">
       <h2>Apply for <span id="job-title"></span></h2>
       <form method="POST" enctype="multipart/form-data">
-          {% csrf_token %}
           <label for="name">Full Name</label>
           <input type="text" name="name" required>
           <label for="email">Email</label>
